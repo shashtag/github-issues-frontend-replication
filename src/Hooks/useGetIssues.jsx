@@ -17,7 +17,10 @@ const useGetIssues = ({ page }) => {
             "token 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",
         },
       },
-    ).then((res) => res.json());
+    ).then((res) => {
+      console.log(res);
+      return res.json();
+    });
     setIssues(data);
   };
 
