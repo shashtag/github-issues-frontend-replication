@@ -34,7 +34,7 @@ const Home = () => {
         <Link to='/facebook/react'>
           <div className='text-white mt-1'>
             Or go to the <span className='text-[#4EBCFF]'> React</span> issues
-            page <i class='fa-solid fa-arrow-right'></i>
+            page <i className='fa-solid fa-arrow-right'></i>
           </div>
         </Link>
       </div>

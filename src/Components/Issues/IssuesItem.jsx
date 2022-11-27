@@ -1,3 +1,4 @@
+import LoadingBar from "react-top-loading-bar";
 import formatTimeAgo from "../../Util/relativeTimeFormatter";
 
 const IssuesItem = ({ issue }) => {

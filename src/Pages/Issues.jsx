@@ -1,11 +1,13 @@
+import { useRef } from "react";
 import { useSearchParams } from "react-router-dom";
+import LoadingBar from "react-top-loading-bar";
 import IssuesItem from "../Components/Issues/IssuesItem";
 import useGetIssues from "../Hooks/useGetIssues";
 
-const Issues = () => {
+const Issues = ({ loadingRef }) => {
   const [searchParams, setSearchParams] = useSearchParams({ page: 1 });
   const page = searchParams.get("page");
-  const issues = useGetIssues({ page });
+  const issues = useGetIssues({ page, loadingRef });
 
   return (
     <div className='bg-black min-h-[100vh] pt-20 text-white'>
@@ -33,7 +35,7 @@ const Issues = () => {
           </button>
           <input
             type='text'
-            className='w-11 mx-2 rounded-md text-center'
+            className='w-11 mx-2 rounded-md text-center text-black'
             value={page}
             onChange={(e) => setSearchParams({ page: e.target.value })}
           />
